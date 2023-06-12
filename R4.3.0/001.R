@@ -122,7 +122,7 @@ mpurl <-
     , clusterOptions = markerClusterOptions() #  放遮盖
   ) |>
   # addCircleMarkers(113.433164, 23.627496, popup = "<a href='/html/gzatable.html' target=\"_blank\">查看景点列表</a>") |>
-  addLogo("https://z3.ax1x.com/2021/10/09/5iF8Vx.png",url = "/web/ft.html") |>
+  addLogo("https://z3.ax1x.com/2021/10/09/5iF8Vx.png",url = "ft.html") |>
   addMarkers( #标注点
     # data = dtsd,
     lat = ~ lat,
