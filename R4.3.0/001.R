@@ -30,14 +30,15 @@ unite('infs',names,M,add,inf,sep = "\n🍐")
 dt[seq(1, dim(dt)[1], by = 2) ,] |> as.data.frame() |> DT::datatable(rownames = F)
 
 #Thu Jun  8 19:35:12 2023 --
+gz.map <-  'https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=440100_full' |>
+  sf::st_read()
 #出图地图  Thu Jun  8 19:45:46 2023 ------------------------------
 
 mle <-
 leaflet() |>
   amap() |>
   addPolylines(data =
-                 'https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=440100_full' |>
-                 sf::st_read(),
+                gz.map,
                color = 'green'
   ) |>
   addCircleMarkers(
@@ -51,7 +52,6 @@ leaflet() |>
            offset.y = 50,"http://image.izyz.org/obs-izy//upload/orgRegisterPic/idcard/20220829/1661777579820.jpg",
           url = "https://youmigo.gitee.io/gz_flowers/")
 mle
-htmlwidgets::saveWidget(mle, file='web/mapleaflet.html')
 #ok Thu Jun  8 19:35:25 2023 --
 
 #出表 Thu Jun  8 19:39:51 2023 ------------------------------
